@@ -287,8 +287,6 @@ configMapBoolean(int opCode, void *opArg,  dictionary* dict, dictionary *target,
 		    return 1;
 		}
 
-		helpKey[0] = '\0';
-
 		printf("setting: %s (--%s)\n", key, key);
 		printf("   type: BOOLEAN (value must start with t/T/y/Y/1/f/F/n/N/0)\n");
 		printf("  usage: %s\n", helptext);
@@ -341,8 +339,6 @@ configMapString(int opCode, void *opArg,  dictionary *dict, dictionary *target,
 		if(opCode & CFGOP_HELP_SINGLE && strcmp(key, helpKey)) {
 		    return 1;
 		}
-
-		helpKey[0] = '\0';
 
 		printf("setting: %s (--%s)\n", key, key);
 		printf("   type: STRING\n");
@@ -415,8 +411,6 @@ configMapInt(int opCode, void *opArg,  dictionary *dict, dictionary *target, con
 	    if(opCode & CFGOP_HELP_SINGLE && strcmp(key, helpKey)) {
 		return 1;
 	    }
-
-	    helpKey[0] = '\0';
 
 	    switch(rangeFlags) {
 	    case RANGECHECK_NONE:
@@ -563,8 +557,6 @@ configMapDouble(int opCode, void *opArg,  dictionary *dict, dictionary *target, 
 		return 1;
 	    }
 
-	    helpKey[0] = '\0';
-
 	    switch(rangeFlags) {
 	    case RANGECHECK_NONE:
 		printf("setting: %s (--%s)\n", key, key);
@@ -700,8 +692,6 @@ const char* key, int restartFlags, uint8_t *var, int def, const char *helptext, 
 		if(opCode & CFGOP_HELP_SINGLE && strcmp(key, helpKey)) {
 		    return 1;
 		}
-
-		helpKey[0] = '\0';
 
 		printf("setting: %s (--%s)\n", key, key);
 		printf("   type: SELECT\n");
